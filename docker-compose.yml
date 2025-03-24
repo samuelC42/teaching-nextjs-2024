@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  nodejs-dev:
+    image: node
+    container_name: nodejs-dev
+    working_dir: /root/app
+    volumes:
+      - .:/root/app
+    ports:
+      - "3000:3000"
+    command: ["tail", "-f", "/dev/null"]
+    environment:
+      - NODE_ENV=development
